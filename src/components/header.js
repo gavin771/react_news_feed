@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
+import logo from '../logo.svg';
 
 class Header extends Component {
-    render () {
+    inputChange(event) {
+        console.log(event.target.value);
+
+    }
+    render() {
         return (
             <header>
-                <div>Logo</div>
-                <input/>
+                <div
+                    className="logo"
+                    onClick={() => { console.log('hiya') }}>Logo</div>
+                <input onChange={this.inputChange} />
             </header>
         )
     }
