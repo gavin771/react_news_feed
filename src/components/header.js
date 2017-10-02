@@ -11,14 +11,13 @@ class Header extends Component {
     }
     inputChange(e) {
         this.setState({ keywords: e.target.value })
+        this.props.newsSearch(e.target.value)
     }
 
     render() {
         return (
             <header>
-                <div
-                    className="logo"
-                    onClick={() => { console.log('hiya') }}>Logo</div>
+                <div className="logo">Logo</div>
                 <input onChange={this.inputChange.bind(this)} />
                 <div> {this.state.title}</div>
                 <div> {this.state.keywords}</div>

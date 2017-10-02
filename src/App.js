@@ -11,15 +11,26 @@ class App extends Component {
     super(props);
 
     this.state = {
-      news: db
+      news: db,
+      filtered: db
     }
-
   }
+
+  filterNews(keywords) {
+    let filtered = [];
+
+    filtered = this.state.news.filter(({ title }) => {
+      return title.includes(keywords);
+    })
+    console.log(newData);
+    this.setState({ filtered });
+  }
+
   render() {
     return (
       <div className="App">
-        <Header />
-        <NewsList news={this.state.news}></NewsList>
+        <Header newsSearch={keywords => this.filterNews(keywords)} />
+        <NewsList news={this.state.filtered}></NewsList>
       </div>
     );
   }
