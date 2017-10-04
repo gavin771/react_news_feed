@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import logo from '../logo.svg';
 
+
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -17,8 +18,11 @@ class Header extends Component {
     render() {
         return (
             <header>
-                <div className="logo">Logo</div>
+                <div className="logo">
+                    <img alt="logo" width={120} src={logo} />
+                </div>
                 <input onChange={this.inputChange.bind(this)} />
+
                 <div> {this.state.title}</div>
                 <div> {this.state.keywords}</div>
             </header>

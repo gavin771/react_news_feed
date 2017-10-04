@@ -22,7 +22,6 @@ class App extends Component {
     filtered = this.state.news.filter(({ title }) => {
       return title.includes(keywords);
     })
-    console.log(newData);
     this.setState({ filtered });
   }
 
@@ -32,6 +31,7 @@ class App extends Component {
         <Header newsSearch={keywords => this.filterNews(keywords)} />
         <NewsList news={this.state.filtered}></NewsList>
       </div>
+
     );
   }
 }
